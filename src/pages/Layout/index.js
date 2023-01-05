@@ -32,6 +32,11 @@ function GeekLayout() {
   const handleClick = (key) => {
     navigate(key)
   }
+  // 获取频道列表
+  const { channelsStore } = useStore()
+  useEffect(() => {
+    channelsStore.getChannels()
+  }, [channelsStore])
   // 获取用户信息
   const { userStore, loginStore } = useStore()
   useEffect(() => {
